@@ -16,34 +16,87 @@ img, input {
 }
 
 #main {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Avenir, Arial, sans-serif;
     font-size: 14px;
     padding-top: 30px;
+    color: rgb(255, 255, 255);
 }
 
 #searchField {
     width: 100%;
     margin-top: 50px;
-    background-color: #95B0CC;
-    color: #ffffff;
+    color: rgb(183,193,205);
     padding: 10px 20px 10px 35px;
     border-radius: 5px;
     border: none;
+    background-color: rgb(128, 146, 167);
     background-image: url(../assets/search.svg);
     background-repeat: no-repeat;
     background-position: 10px;
 }
 
+    #searchField:focus{
+        background-color: rgb(179, 190, 202);
+        color: rgb(255, 255, 255);
+    }
+
 #result{
     margin-top: 20px;
-    color: #ffffff;
+    background-color: rgb(31, 64, 105);
+    min-height: 0;
 }
 
-#result .res {
-    display: block;
-    padding: 10px 0;
-}
+    #result .res {
+        display: flex;
+        padding: 10px 30px;
+        line-height: 20px;
+    }
 
-#result .res span {
-    font-size: 11px;
-}
+        #result .res:first-child{
+            margin-top: 15px;
+        }
+
+        #result .res:last-child{
+            margin-bottom: 15px;
+        }
+
+        #result .res:hover{
+            background-color:rgb(56, 86, 123);
+        }
+
+        #result .res .name{
+            flex: 2;
+        }
+
+        #result .res .date {
+            font-size: 11px;
+            flex: 2;
+        }
+
+        #result .res .delete {
+            width: 40px;
+            height: 40px;
+            margin: -10px -30px;
+            position: relative;
+            background-color: rgb(121, 57, 82);
+            visibility: hidden;
+        }
+
+            #result .res .delete .circle {
+                width:10px;
+                height: 10px;
+                border-radius: 5px;
+                position: absolute;
+                left: 15px;
+                top: 15px;
+                background-color: rgb(255, 255, 255);
+                font-size: 10px;
+                line-height: 10px;
+                color: rgb(151, 151, 151);
+                text-align: center;
+            }
+
+            #result .res:hover .delete {
+                visibility: visible;
+            }
+            
