@@ -15,8 +15,9 @@ function addCountryToResults(country){
     //Creates the HTML for a result list element containing of a country and a timestamp
     var datestamp = getDate();
     $("#result").append("<div class='row res'>"+
-    "<div class='col-xs-4'>"+ country + "</div>"+
-    "<div class='col-xs-8'><span>"+ datestamp + "</span></div>" + 
+    "<div class='name'>"+ country + "</div>"+
+    "<div class='date'>"+ datestamp + "</div>" + 
+    "<div class='delete'><div class='circle'>&times;</div></div>" + 
     "</div>");
     
 }
@@ -33,7 +34,7 @@ function implementAutocomplete(data){
 }
 
 $(document).ready(function(){
-    
+
     /*Gets a list of countries from a public REST API and maps the names of the 
     countries to an object that can be used by the jQuery Autocomplete function */
     $.ajax({
@@ -49,4 +50,10 @@ $(document).ready(function(){
            implementAutocomplete(res_data);
         }
     });
+
+    //Deletes a search result from the list when the user clicks the delete button.
+    $("#result").on("click", "div.delete", function(){
+        $(this).parent().remove();
+    });
+    
 });
