@@ -1,0 +1,134 @@
+html, body{
+    height: 100%; /*Needed to make the background color cover full browser height*/
+}
+
+body{
+    margin:0;
+    background: rgb(0, 38, 80); /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(rgb(0, 38, 80), rgb(58, 87, 166)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgb(0, 38, 80), rgb(58, 87, 166)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgb(0, 38, 80), rgb(58, 87, 166)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgb(0, 38, 80), rgb(58, 87, 166)); /* Standard syntax */
+}
+
+input, 
+img {
+    margin: auto;
+    display: block;
+}
+
+input {
+    color: rgb(183,193,205);
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(128, 146, 167);
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+/* Sets the color of the placeholder */
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: rgb(183,193,205);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: rgb(183,193,205);
+    opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: rgb(183,193,205);
+    opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(183,193,205);
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgb(183,193,205);
+}
+
+#main {
+    font-family: Avenir, Arial, sans-serif;
+    font-size: 18px;
+    padding-top: 40px;
+    color: rgb(255, 255, 255);
+    max-width: 700px;
+    margin: auto;
+}
+
+input#searchField {
+    width: 90%;
+    margin-top: 55px;
+    padding: 17px 20px 17px 50px;
+    background-image: url(../images/search.svg);
+    background-repeat: no-repeat;
+    background-position: 20px;
+}
+
+input#searchField:focus {
+    background-color: rgb(179, 190, 202);
+    color: rgb(255, 255, 255);
+}
+
+#result {
+    margin-top: 30px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: rgb(31, 64, 105);
+    min-height: 0;
+}
+
+#result:empty {
+    display: none;
+}
+
+    #result .res {
+        display: flex;
+        padding: 17px 40px;
+        line-height: 20px;
+    }
+
+        #result .res:hover {
+            background-color:rgb(56, 86, 123);
+        }
+
+        #result .res .name{
+            flex: 2;
+        }
+
+        #result .res .date {
+            font-size: 12px;
+            flex: 3;
+        }
+
+        #result .res .delete {
+            width: 54px;
+            height: 54px;
+            margin: -17px -40px;
+            position: relative;
+            background-color: rgb(31, 64, 105);
+            border:none;
+        }
+
+            #result .res .delete .circle {
+                width:15px;
+                height: 15px;
+                border-radius: 10px;
+                position: absolute;
+                left: 19px;
+                top: 19px;
+                background-color: rgb(255, 255, 255);
+                font-size: 15px;
+                line-height: 15px;
+                color: rgb(151, 151, 151);
+                text-align: center;
+                visibility: hidden;
+            }
+
+        #result .res:hover .delete,
+        #result .res .delete:focus {
+            background-color: rgb(121, 57, 82);
+        }
+            #result .res:hover .delete .circle,
+            #result .res .delete:focus .circle {
+                visibility: visible;
+            }
+            
